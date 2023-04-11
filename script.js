@@ -5,7 +5,6 @@ let gamePattern = [];
 let userClickedPattern = [];
 
 let started = false;
-let level = 0;
 
 $(document).keypress(function() {
   if (!started) {
@@ -53,7 +52,9 @@ function checkAnswer(currentLevel) {
       startOver();
     }
 
-}
+};
+
+let level = 0;
 
 function nextSequence() {
   userClickedPattern = [];

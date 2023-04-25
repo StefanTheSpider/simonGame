@@ -1,0 +1,11 @@
+{
+  "name": "simon-game-challenge-starting-files",
+  "version": "1.0.0",
+  "description": "this is a pattern memory game",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "StefanTheSpider",
+  "license": "ISC"
+}

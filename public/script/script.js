@@ -103,3 +103,27 @@ function checkAnswer(currentLevel) {
     startOver();
   }
 };
+
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  // Auf einem mobilen Gerät
+  document.addEventListener('touchstart', function(event) {
+    let started = false;
+
+    $(document).off('keypress').on('keypress', function() {
+      if (!started) {
+        $("#level-title").text("Level " + level);
+        nextSequence();
+        started = true;
+      }
+    });
+  });
+} else {
+  // Auf einem Desktop-Gerät
+  $(document).off('touchstart').on('keypress', function() {
+    if (!started) {
+      $("#level-title").text("Level " + level);
+      nextSequence();
+      started = true;
+    }
+  });
+}

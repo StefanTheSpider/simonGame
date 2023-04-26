@@ -1,12 +1,16 @@
 let started = false;
 
-$(document).keypress(function() {
+$(document).on('keypress touchstart', function(event) {
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
+    if (event.type === "touchstart") {
+      touchStarted = true;
+    }
   }
 });
+
 
 function startOver() {
   started = false;

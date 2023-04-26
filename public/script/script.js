@@ -26,7 +26,7 @@ function startOver() {
 * ? Schließlich wird die Funktion 'checkAnswer' aufgerufen, wobei als Argument der letzte Wert im 'userClickedPattern'-Array übergeben wird, um zu prüfen, ob die vom Benutzer ausgewählten Töne der Reihenfolge des Spiels entsprechen.
 */
 let userClickedPattern = [];
-$(".btn").click(function() {
+$(".btn").on('click, touchstart', function() {
   let userChosenColor = $(this).attr("id");
   userClickedPattern.push(userChosenColor);
 
@@ -39,7 +39,7 @@ let level = 0;
 let buttonColors = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
 /**
-* ?Zu Beginn wird ein leeres Array namens 'userClickedPattern' erstellt, in das später die vom Benutzer geklickten Buttons gespeichert werden.
+* ? Zu Beginn wird ein leeres Array namens 'userClickedPattern' erstellt, in das später die vom Benutzer geklickten Buttons gespeichert werden.
 *
 * ? Danach wird die zuvor erstellte Variable 'level' um den Wert 1 erhöht und die Anzeige im Spiel entsprechend angepasst, um das aktuelle Level widerzuspiegeln.
 *
